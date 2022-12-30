@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/main/kotlin/io/github/dasampharos/game/ScoreLabel.kt" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="UserInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 62.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0.2, 0.184314, 0.215686, 1 )
+text = "Score: 0"
+script = ExtResource( 2 )
+
+[node name="Retry" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.470588 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Retry"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.0
+margin_top = -30.0
+margin_right = 138.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="Retry/VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 28.0
+text = "Game Over"
+align = 1
+
+[node name="Label2" type="Label" parent="Retry/VBoxContainer"]
+margin_top = 32.0
+margin_right = 276.0
+margin_bottom = 60.0
+text = "Press Enter to play again"
